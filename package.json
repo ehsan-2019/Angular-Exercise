@@ -1,0 +1,48 @@
+{
+  "name": "angular-exercise",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.14.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "jest --no-coverage",
+    "lint": "ng lint"
+  },
+  "dependencies": {
+    "@angular/animations": "^20.3.25",
+    "@angular/cdk": "^20.2.14",
+    "@angular/common": "^20.3.25",
+    "@angular/compiler": "^20.3.25",
+    "@angular/core": "^20.3.25",
+    "@angular/forms": "^20.3.25",
+    "@angular/material": "^20.2.14",
+    "@angular/platform-browser": "^20.3.25",
+    "@angular/router": "^20.3.25",
+    "rxjs": "^7.4.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-eslint/builder": "^20.7.0",
+    "@angular-eslint/eslint-plugin": "^20.7.0",
+    "@angular-eslint/eslint-plugin-template": "^20.7.0",
+    "@angular-eslint/schematics": "^20.7.0",
+    "@angular-eslint/template-parser": "^20.7.0",
+    "@angular/build": "^20.3.30",
+    "@angular/cli": "^20.3.30",
+    "@angular/compiler-cli": "^20.3.25",
+    "@types/jest": "^30.0.0",
+    "angular-eslint": "^20.7.0",
+    "eslint": "^9.0.0",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "jest-preset-angular": "^17.0.0",
+    "typescript": "~5.8.3",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.0.0"
+  }
+}

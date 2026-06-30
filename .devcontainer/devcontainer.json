@@ -1,0 +1,21 @@
+{
+  "name": "angular-exercise-dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-24",
+  "onCreateCommand": "npm install",
+  "forwardPorts": [4200],
+  "portsAttributes": {
+    "4200": {
+      "label": "Angular Dev Server",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "angular.ng-template",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
