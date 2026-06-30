@@ -1,27 +1,33 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
+import { MatToolbarHarness } from '@angular/material/toolbar/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { HarnessLoader } from '@angular/cdk/testing';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let loader: HarnessLoader;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
       providers: [
-        provideAnimationsAsync(),
         provideHttpClient(),
         provideRouter([]),
       ],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
   });
+  
+  it('should render the toolbar title', async () => {
+    loader = TestbedHarnessEnvironment.loader(fixture);
 
-  it('should render the toolbar title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled: HTMLElement = fixture.nativeElement;
-    const toolbar = compiled.querySelector('mat-toolbar');
-    expect(toolbar).not.toBeNull();
-    expect(toolbar!.textContent).toContain('Angular Exercise');
+
+    const toolbar = await loader.getHarness(MatToolbarHarness);
+    const title = await toolbar.getRowsAsText();
+    expect(title).toContain('Angular Exercise');
   });
 });
